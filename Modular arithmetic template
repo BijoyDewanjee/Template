@@ -1,0 +1,7 @@
+inline void normal(ll &a) { a %= MOD; (a < 0) && (a += MOD); } /// a ar value negative hole positive kore dibe
+inline ll modMul(ll a, ll b) { a %= MOD, b %= MOD; normal(a), normal(b); return (a*b)%MOD; } /// Multiplication
+inline ll modAdd(ll a, ll b) { a %= MOD, b %= MOD; normal(a), normal(b); return (a+b)%MOD; } ///addition
+inline ll modSub(ll a, ll b) { a %= MOD, b %= MOD; normal(a), normal(b); a -= b; normal(a); return a; } ///Substraction
+inline ll modPow(ll b, ll p) { ll r = 1; while(p) { if(p&1) r = modMul(r, b); b = modMul(b, b); p >>= 1; } return r; } ///power
+inline ll modInverse(ll a) { return modPow(a, MOD-2); } ///Modular  inverse
+inline ll modDiv(ll a, ll b) { return modMul(a, modInverse(b)); } /// Modular division
